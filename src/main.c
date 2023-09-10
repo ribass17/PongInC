@@ -56,34 +56,24 @@ void processInput(){
     }
 }
 void setup(){
-    ball.x = 20;
-    ball.y = 20;
+    ball.x = 1;
+    ball.y = 1;
     ball.height = 15;
     ball.width = 15;
 }
 
 void update(){
-    int sttX,sttY;
-    while (!SDL_TICKS_PASSED(SDL_GetTicks(), lastFrameTime + FRAME_TARGET_TIME));
-
+    int timeToWait = FRAME_TARGET_TIME - (SDL_GetTicks() - lastFrameTime); 
+    
+    if(timeToWait > 0 && timeToWait <= FRAME_TARGET_TIME){
+        SDL_Delay(timeToWait);
+    }
+    
+    float   deltaTime = ((SDL_GetTicks() - lastFrameTime) /  1000.0f);
+    
 
     lastFrameTime = SDL_GetTicks();
-
-    if(ball.x >= 800  || ball.y >= 600){
-        ball.x >= 800 ?  sttX + 1 : sttX = 0;
-        ball.y >= 600 ?  sttY + 1 : sttY = 0;
-    }
-
-
-    if(sttX)
-        ball.x -= 1;
-    else
-        ball.x += 1;
-
-    if(sttY)
-        ball.y -= 1;
-    else
-        ball.y += 1;
+    
 }
 
 
