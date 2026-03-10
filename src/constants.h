@@ -6,3 +6,11 @@
 
 #define FPS 30
 #define FRAME_TARGET_TIME (1000 / FPS)
+
+#define BALL_SIZE 15
+#define PADDLE_WIDTH 15
+#define PADDLE_HEIGHT 90
+#define PADDLE_MARGIN 20
+#define PADDLE_SPEED 20
+#define BALL_SPEED_X 90
+#define BALL_SPEED_Y 70

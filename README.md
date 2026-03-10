@@ -10,7 +10,7 @@ make run
 
 ## Testes
 
-O projeto possui um teste de build que valida se o binário é gerado corretamente:
+O projeto possui testes unitários que validam a lógica do jogo (posições iniciais, colisões e reinício da bola):
 
 ```bash
 make test
