@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
-#include "./constants.h"
+#include "./game.h"
 
 int gameIsRunning = FALSE; 
 int colX = 1;
@@ -10,18 +9,8 @@ SDL_Renderer* renderer = NULL;
 
 int lastFrameTime = 0;
 
-struct ball
-{
-    float x, y, width, height;
-}ball;
-
-typedef struct
-{
-    float x, y, width, height;
-}barra;
-
-barra b1, b2; 
-
+struct ball ball;
+barra b1, b2;
 
 
 int initializeWindow(void){
@@ -205,6 +194,8 @@ void stopGame(){
 }
 
 
+
+#ifndef UNIT_TEST
 int  main(){
 	gameIsRunning = initializeWindow();
 
@@ -220,3 +211,4 @@ int  main(){
 
 	return 0;
 }
+#endif
